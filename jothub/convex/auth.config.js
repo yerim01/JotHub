@@ -1,7 +1,7 @@
 export default {
   providers: [
     {
-      domain: process.env.CLERK_JWT_ISSUER_URL,
+      domain: "https://saved-gnat-63.clerk.accounts.dev",
       applicationID: "convex",
     },
   ],
