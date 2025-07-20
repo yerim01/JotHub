@@ -31,23 +31,26 @@ export const CoverImageModal = () => {
     coverImage.onClose();
   };
 
-  //   const onChange = async (file?: File) => {
-  //     if (file) {
-  //       setIsSubmitting(true);
-  //       setFile(file);
+  // const onChange = async (file?: File) => {
+  //   if (file) {
+  //     setIsSubmitting(true);
+  //     setFile(file);
 
-  //       const res = await edgeStore.publicFiles.upload({
-  //         file,
-  //       });
+  //     const res = await edgestore.publicFiles.upload({
+  //       file,
+  //       options: {
+  //         replaceTargetUrl: coverImage.url
+  //       }
+  //     });
 
-  //       await update({
-  //         id: params.documentId as Id<"documents">,
-  //         coverImage: res.url,
-  //       });
+  //     await update({
+  //       id: params.documentId as Id<"documents">,
+  //       coverImage: res.url,
+  //     });
 
-  //       onClose();
-  //     }
-  //   };
+  //     onClose();
+  //   }
+  // };
 
   const uploadFn: UploadFn = React.useCallback(
     async ({ file }) => {
@@ -57,7 +60,10 @@ export const CoverImageModal = () => {
       }
 
       const res = await edgestore.publicFiles.upload({
-        file
+        file,
+        options: {
+          replaceTargetUrl: coverImage.url,
+        },
       });
 
       await update({
@@ -69,7 +75,7 @@ export const CoverImageModal = () => {
 
       return res;
     },
-    [edgestore]
+    [coverImage.url, params.documentId, edgestore]
   );
 
   return (
@@ -84,6 +90,7 @@ export const CoverImageModal = () => {
               maxSize: 1024 * 1024 * 1, // 1 MB
             }}
             className="w-full outline-none"
+            disabled={isSubmitting}
           />
         </UploaderProvider>
       </DialogContent>
