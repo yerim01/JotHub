@@ -1,4 +1,3 @@
-import { Id } from "@/convex/_generated/dataModel";
 import { create } from "zustand";
 
 type coverImageStore = {
@@ -12,7 +11,7 @@ type coverImageStore = {
 export const useCoverImage = create<coverImageStore>((set) => ({
   url: undefined,
   isOpen: false,
-  onOpen: () => set({ isOpen: true }),
+  onOpen: () => set({ isOpen: true, url: undefined }),
   onClose: () => set({ isOpen: false, url: undefined }),
   onReplace: (url: string) => set({ isOpen: true, url }),
 }));
