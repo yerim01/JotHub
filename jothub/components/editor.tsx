@@ -4,7 +4,7 @@ import { useTheme } from "next-themes";
 
 import "@blocknote/mantine/style.css";
 
-import { BlockNoteEditor, PartialBlock } from "@blocknote/core";
+import { PartialBlock } from "@blocknote/core";
 import { BlockNoteView } from "@blocknote/mantine";
 import { useCreateBlockNote } from "@blocknote/react";
 
@@ -43,15 +43,22 @@ const Editor = ({ onChange, initialContent, editable = true }: EditorProps) => {
     return () => clearInterval(interval);
   }, [editor, onChange]);
 
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     const el = document.querySelector(".ProseMirror") as HTMLElement | null;
+  //     if (el) {
+  //       el.setAttribute("contentEditable", editable ? "true" : "false");
+  //     }
+  //   }, 100); // wait for mount
+  //   return () => clearTimeout(timer);
+  // }, [editable]);
+
+  // Sync editable state
   useEffect(() => {
-    const timer = setTimeout(() => {
-      const el = document.querySelector(".ProseMirror") as HTMLElement | null;
-      if (el) {
-        el.setAttribute("contentEditable", editable ? "true" : "false");
-      }
-    }, 100); // wait for mount
-    return () => clearTimeout(timer);
-  }, [editable]);
+    if (editor._tiptapEditor) {
+      editor._tiptapEditor.setEditable(editable);
+    }
+  }, [editable, editor]);
 
   return (
     <div>
