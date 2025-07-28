@@ -12,8 +12,6 @@ import { useDropzone, type DropzoneOptions } from "react-dropzone";
 import { ProgressCircle } from "./progress-circle";
 import { formatFileSize, useUploader } from "./uploader-provider";
 
-import { Spinner } from "../spinner";
-
 const DROPZONE_VARIANTS = {
   base: "relative rounded-md p-4 flex justify-center items-center flex-col cursor-pointer min-h-[150px] min-w-[200px] border-2 border-dashed border-muted-foreground transition-colors duration-200 ease-in-out",
   image: "border-0 p-0 min-h-0 min-w-0 relative bg-muted shadow-md",

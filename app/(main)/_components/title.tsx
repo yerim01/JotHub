@@ -56,6 +56,7 @@ export const Title = ({ initialData }: TitleProps) => {
           onClick={enableInput}
           onBlur={disableInput}
           onChange={onChange}
+          onKeyDown={onKeyDown}
           value={title}
           className="h-7 px-2 focus-visible:ring-transparent"
         />

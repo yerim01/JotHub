@@ -22,11 +22,11 @@ export const CoverImageModal = () => {
   const coverImage = useCoverImage();
   const { edgestore } = useEdgeStore();
 
-  const [file, setFile] = useState<File>();
+  // const [file, setFile] = useState<File>();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const onClose = () => {
-    setFile(undefined);
+    // setFile(undefined);
     setIsSubmitting(false);
     coverImage.onClose();
   };
@@ -56,7 +56,7 @@ export const CoverImageModal = () => {
     async ({ file }) => {
       if (file) {
         setIsSubmitting(true);
-        setFile(file);
+        // setFile(file);
       }
 
       const res = await edgestore.publicFiles.upload({
