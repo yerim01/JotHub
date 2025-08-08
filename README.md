@@ -1,4 +1,4 @@
-# JotHub 📝  
+# JotHub 📝
 A Notion-style document editor built with **Next.js**, **Convex**, and **Clerk**  
 Deployed on **Vercel** : **[JotHub](https://jot-hub.vercel.app/)**  
 
