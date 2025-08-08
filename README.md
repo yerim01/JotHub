@@ -1,6 +1,6 @@
 # JotHub 📝
 A Notion-style document editor built with **Next.js**, **Convex**, and **Clerk**  
-Deployed on **Vercel** : **[JotHub](https://jot-hub.vercel.app/)**  
+Deployed on **Vercel** - **Website** : **[JotHub](https://jot-hub.vercel.app/)**
 
 > This is a clone project based on the excellent [Code with Antonio](https://www.youtube.com/@codewithantonio) tutorial.
 
