@@ -5,7 +5,9 @@ Deployed on **Vercel** - **Website** : **[JotHub](https://jot-hub.vercel.app/)**
 > This is a clone project based on the excellent [Code with Antonio](https://www.youtube.com/@codewithantonio) tutorial.
 
 ---
+## Screenshot
 
+![jothub screenshot](https://github.com/yerim01/JotHub/blob/ea2ab9c61a4bd5f9ca4813fe33b92063a2eddd8e/public/Screenshot.jpg)
 
 ## ✨ Tech Stack
 
